@@ -1,29 +1,31 @@
-#Talk about how to setup Webcamera
+###Talk about how to setup Webcamera
 
-##first run roscore
-1. roscore
+## Steps
+#first run roscore
+$ roscore
 
-##run driver in another terminal
-2. rosrun usb_cam usb_cam_node _video_device:=/dev/video1
+#run driver in another terminal
+$ rosrun usb_cam usb_cam_node _video_device:=/dev/video1
 
-##open rviz to see the image (optional)
+#open rviz to see the image (optional)
 1. rviz
 2. then click "Add" (left low corner)
 3. choose 'By topic'
 4. choose 'Image' in 'usb_cam'
 5. click OK
 
-##use command to get an image view (under catkin_ws)
-rosrun image_view image_view image:=/usb_cam/image_raw
+#use command to get an image view (under catkin_ws)
+$ rosrun image_view image_view image:=/usb_cam/image_raw
 
-##calibrate camera
+#calibrate camera
 follow this website: http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration
-1. rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.025 image:=/usb_cam/image_raw camera:=/usb_cam
+1. $ rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.025 image:=/usb_cam/image_raw camera:=/usb_cam
 2. prepare a 8x6 checkerboard with 25mm squares. 
 3. move the checkboard until 'calibrate' on
 4. after calculation, click 'commit'
 
-##Camera Info (logitech hd 1080p) 
+## Results
+#Camera Info (logitech hd 1080p) 
 camera matrix
 646.687955 0.000000 306.702458
 0.000000 649.531912 257.973025
@@ -42,7 +44,7 @@ projection
 0.000000 649.214600 259.259837 0.000000
 0.000000 0.000000 1.000000 0.000000
 
-##Camera Info (logitech 4k brio device1) 
+#Camera Info (logitech 4k brio device1) 
 camera matrix
 495.308939 0.000000 323.299934
 0.000000 497.438700 243.118653
