@@ -1,0 +1,71 @@
+#Talk about how to setup Webcamera
+
+##first run roscore
+1. roscore
+
+##run driver in another terminal
+2. rosrun usb_cam usb_cam_node _video_device:=/dev/video1
+
+##open rviz to see the image (optional)
+1. rviz
+2. then click "Add" (left low corner)
+3. choose 'By topic'
+4. choose 'Image' in 'usb_cam'
+5. click OK
+
+##use command to get an image view (under catkin_ws)
+rosrun image_view image_view image:=/usb_cam/image_raw
+
+##calibrate camera
+follow this website: http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration
+1. rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.025 image:=/usb_cam/image_raw camera:=/usb_cam
+2. prepare a 8x6 checkerboard with 25mm squares. 
+3. move the checkboard until 'calibrate' on
+4. after calculation, click 'commit'
+
+##Camera Info (logitech hd 1080p) 
+camera matrix
+646.687955 0.000000 306.702458
+0.000000 649.531912 257.973025
+0.000000 0.000000 1.000000
+
+distortion
+0.005365 -0.122654 0.003635 -0.007974 0.000000
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+641.805786 0.000000 302.346272 0.000000
+0.000000 649.214600 259.259837 0.000000
+0.000000 0.000000 1.000000 0.000000
+
+##Camera Info (logitech 4k brio device1) 
+camera matrix
+495.308939 0.000000 323.299934
+0.000000 497.438700 243.118653
+0.000000 0.000000 1.000000
+
+distortion
+0.158729 -0.289393 0.001717 0.002338 0.000000
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+503.566711 0.000000 325.000569 0.000000
+0.000000 508.695953 243.796894 0.000000
+0.000000 0.000000 1.000000 0.000000
+
+('D = ', [0.15872919008108066, -0.2893932776036507, 0.0017166390291949666, 0.0023376166535555294, 0.0])
+('K = ', [495.3089385419687, 0.0, 323.2999340792418, 0.0, 497.4387000487153, 243.11865349205212, 0.0, 0.0, 1.0])
+('R = ', [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+('P = ', [503.56671142578125, 0.0, 325.00056867303283, 0.0, 0.0, 508.6959533691406, 243.796893698619, 0.0, 0.0, 0.0, 1.0, 0.0])
+
+
+
+

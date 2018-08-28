@@ -1,0 +1,16 @@
+#Talk about how to setup Rplidar
+
+##open a terminal and run driver
+roslaunch rplidar_ros rplidar.launch
+
+##open rviz to see the 2d point cloud (optional)
+1. rviz
+2. then click "Add" (left low corner)
+3. choose 'By topic'
+4. choose 'LaserScan' in '/scan'
+5. click OK
+6. set the 'Fixed Frame' under 'Global Options' to laser
+7. then you can see the 2d point cloud
+
+## OR use the command as below directly open rviz and run driver
+roslaunch rplidar_ros view_rplidar.launch

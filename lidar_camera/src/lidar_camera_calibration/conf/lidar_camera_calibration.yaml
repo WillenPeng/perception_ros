@@ -1,0 +1,5 @@
+﻿lidar_camera_calibration:
+  camera_frame_topic: /pg_15307894/image_raw
+  camera_info_topic: /pg_15307894/camera_info
+  velodyne_topic: /ns4/velodyne_points
+

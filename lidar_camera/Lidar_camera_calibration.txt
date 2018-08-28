@@ -1,0 +1,42 @@
+1. Run lidar camera calibration under 'catkin_ws' folder
+source devel/setup.bash
+roslaunch lidar_camera_calibration find_transform.launch
+click the selected lidar point then press a button
+
+Note: if playing with a rosbag file, run in bag file folder: (We need to use recorded time as simulated time so that it can do sychronization in two topics)
+roscore
+rosparam set use_sim_time true
+rosbag play --clock -l bagfilename.bag
+
+2. Show the result of 3d lidar points mapping to 2d image:
+rosrun multi_sensor_fusion camera_lidar_fusion
+
+3. sample output:
+--------------------------------------------------------------------
+After 100 iterations
+--------------------------------------------------------------------
+Average translation is:
+ -0.13612
+-0.772299
+-0.630619
+Average rotation is:
+   0.999147  0.00747073  -0.0406159
+-0.00329437    0.994786    0.101936
+  0.0411657   -0.101715    0.993961
+Average transformation is: 
+   0.999147  0.00747073  -0.0406159    -0.13612
+-0.00329437    0.994786    0.101936   -0.772299
+  0.0411657   -0.101715    0.993961   -0.630619
+          0           0           0           1
+Final rotation is:
+   0.998135  -0.0605834 -0.00751897
+-0.00125513    0.102773   -0.994704
+  0.0610353    0.992858    0.102506
+Final ypr is:
+ 3.14034
+-3.08052
+-1.67367
+Average RMSE is: 0.0290412
+RMSE on average transformation is: 0.0322195
+
+
