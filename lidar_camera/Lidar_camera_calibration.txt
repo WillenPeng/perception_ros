@@ -1,6 +1,6 @@
 ###Talk about how to run lidar-camera calibration
 
-#Github: https://github.com/ankitdhall/lidar_camera_calibration to find specific information
+#Github: https://github.com/ankitdhall/lidar_camera_calibration
 #Paper: LiDAR-Camera Calibration using 3D-3D Point correspondences
 
 ## Steps

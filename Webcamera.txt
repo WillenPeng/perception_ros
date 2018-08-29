@@ -1,6 +1,13 @@
 ###Talk about how to setup Webcamera
 
 ## Steps
+
+#check device
+$ v4l2-ctl --list-devices
+
+#check device
+$ v4l2-ctl --list-devices
+
 #first run roscore
 $ roscore
 
