@@ -1,5 +1,8 @@
 ###Talk about how to setup Rplidar
 
+#Github: https://github.com/Slamtec/rplidar_ros
+#ROS WIKI: http://wiki.ros.org/rplidar
+
 ##Steps
 #open a terminal and run driver
 $ roslaunch rplidar_ros rplidar.launch
@@ -15,3 +18,7 @@ $ roslaunch rplidar_ros rplidar.launch
 
 # OR use the command as below directly open rviz and run driver
 $ roslaunch rplidar_ros view_rplidar.launch
+
+##Results
+Topic name: /scan
+Topic type: sensor_msgs/LaserScan

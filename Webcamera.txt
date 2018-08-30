@@ -1,12 +1,15 @@
 ###Talk about how to setup Webcamera
 
+#Github: https://github.com/ros-drivers/usb_cam
+#ROS WIKI: http://wiki.ros.org/usb_cam
+
 ## Steps
 
 #check device
 $ v4l2-ctl --list-devices
 
-#check device
-$ v4l2-ctl --list-devices
+#check resolution for device (exm:1)
+$ v4l2-ctl --device=1 --list-formats-ext
 
 #first run roscore
 $ roscore
@@ -25,7 +28,9 @@ $ rosrun usb_cam usb_cam_node _video_device:=/dev/video1
 $ rosrun image_view image_view image:=/usb_cam/image_raw
 
 #calibrate camera
-follow this website: http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration
+
+#ROS WIKI: http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration
+
 1. $ rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.025 image:=/usb_cam/image_raw camera:=/usb_cam
 2. prepare a 8x6 checkerboard with 25mm squares. 
 3. move the checkboard until 'calibrate' on

@@ -2,6 +2,7 @@
 
 #Github: https://github.com/ankitdhall/lidar_camera_calibration
 #Paper: LiDAR-Camera Calibration using 3D-3D Point correspondences
+#Related video showing how to do lidar-camera calibration: https://www.youtube.com/watch?v=SiPGPwNKE-Q&t=7s
 
 ## Steps
 1. Run lidar camera calibration under 'catkin_ws' folder
@@ -14,10 +15,9 @@ $ roscore
 $ rosparam set use_sim_time true
 $ rosbag play --clock -l bagfilename.bag
 
-2. Show the result of 3d lidar points mapping to 2d image:
-$ rosrun multi_sensor_fusion camera_lidar_fusion
 
 ## Results
+The result will be shown in the terminal after finishing calibration.
 1. sample output:
 --------------------------------------------------------------------
 After 100 iterations
